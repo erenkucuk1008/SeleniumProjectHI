@@ -8,7 +8,7 @@ import org.openqa.selenium.WebElement;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
-public class FindElementsPractice1 {
+public class P2_MerriamWebster_Practice {
 
     public static void main(String[] args) {
 
@@ -16,7 +16,7 @@ public class FindElementsPractice1 {
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
 
-        driver.get("http://practice.cybertekschool.com/forgot_password");
+        driver.get("http://www.merriam-webster.com");
 
         List<WebElement> listOfLinks = driver.findElements(By.xpath("//body//a"));
 
@@ -33,10 +33,14 @@ public class FindElementsPractice1 {
             }
         }
 
+        //print out how many link is missing text
         System.out.println("linkWithoutText = " + linkWithoutText);
+
+        //print out how many links have texts
         System.out.println("linkWithText = " + linkWithText);
-        int numberOfLinks = listOfLinks.size();
-        System.out.println("numberOfLinks = " + numberOfLinks);
+
+        //print out how many total links
+        System.out.println("Total links: "+listOfLinks.size());
 
         driver.close();
     }
