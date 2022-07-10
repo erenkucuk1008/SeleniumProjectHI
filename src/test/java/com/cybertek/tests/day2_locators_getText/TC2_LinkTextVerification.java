@@ -3,6 +3,7 @@ package com.cybertek.tests.day2_locators_getText;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 public class TC2_LinkTextVerification {
@@ -15,7 +16,9 @@ public class TC2_LinkTextVerification {
 
         driver.get("http://zero.webappsecurity.com/login.html");
 
-        String actualHREF = driver.findElement(By.className("brand")).getAttribute("href");
+        WebElement zeroBankLink = driver.findElement(By.className("brand"));
+
+        String actualHREF = zeroBankLink.getAttribute("href");
         String expectedHREF = "index.html";
         System.out.println("actualHREF = " + actualHREF);
 
@@ -25,7 +28,7 @@ public class TC2_LinkTextVerification {
             System.err.println("HREF verification Failed..");
         }
 
-        String actualLinkText = driver.findElement(By.className("brand")).getText();
+        String actualLinkText = zeroBankLink.getText();
         String expectedLinkText = "Zero Bank";
         System.out.println("actualLinkText = " + actualLinkText);
 
