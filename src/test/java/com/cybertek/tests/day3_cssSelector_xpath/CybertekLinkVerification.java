@@ -1,17 +1,15 @@
 package com.cybertek.tests.day3_cssSelector_xpath;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
+import com.cybertek.utilities.WebDriverFactory;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
 
 public class CybertekLinkVerification {
 
     public static void main(String[] args) throws InterruptedException {
 
-        WebDriverManager.chromedriver().setup();
-        WebDriver driver = new ChromeDriver();
+        WebDriver driver = WebDriverFactory.getDriver("chrome");
         driver.manage().window().maximize();
 
         driver.get("http://practice.cybertekschool.com/forgot_password");
