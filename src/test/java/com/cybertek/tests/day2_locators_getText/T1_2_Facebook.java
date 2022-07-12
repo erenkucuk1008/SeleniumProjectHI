@@ -16,8 +16,11 @@ public class T1_2_Facebook {
 
         driver.get("https://www.facebook.com");
 
+        Thread.sleep(2000);
         driver.findElement(By.id("email")).sendKeys("anything@gmail.com");
+        Thread.sleep(2000);
         driver.findElement(By.id("pass")).sendKeys("asdasdff"+ Keys.ENTER);
+        Thread.sleep(2000);
 
         String expectedTitle = "Log into Facebook";
         Thread.sleep(5000);
