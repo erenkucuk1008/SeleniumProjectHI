@@ -48,7 +48,12 @@ public class AlertPractices {
 //
         //5. Verify “You successfuly clicked an alert” text is displayed
         WebElement successMessage = driver.findElement(By.id("result"));
-        Assert.assertEquals(successMessage.getText(),"You successfully clicked an alert");
+
+        String actualMsg = successMessage.getText();
+        String expectedMsg = "You successfully clicked an alert";
+
+        Assert.assertEquals(actualMsg, expectedMsg);
+        Assert.assertTrue(successMessage.isDisplayed());
     }
 
     @AfterMethod
