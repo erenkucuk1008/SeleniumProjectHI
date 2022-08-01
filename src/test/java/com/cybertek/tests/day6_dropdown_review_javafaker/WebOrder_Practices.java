@@ -21,7 +21,7 @@ public class WebOrder_Practices {
     WebDriver driver;
 
     @BeforeMethod
-    public void setUpMethod(){
+    public void setUpMethod() throws InterruptedException {
         //Open browser
         driver = WebDriverFactory.getDriver("chrome");
 
