@@ -10,12 +10,15 @@ public class CybertekLinkVerification {
     public static void main(String[] args) throws InterruptedException {
 
         WebDriver driver = WebDriverFactory.getDriver("chrome");
+        Thread.sleep(7000);
         driver.manage().window().maximize();
 
         driver.get("http://practice.cybertekschool.com/forgot_password");
+        Thread.sleep(4000);
         driver.findElement(By.name("email")).sendKeys("anything@gmail.com");
+        Thread.sleep(4000);
         driver.findElement(By.id("form_submit")).click();
-        Thread.sleep(2000);
+        Thread.sleep(5000);
 
         String actualURL = driver.getCurrentUrl();
         String expectedURL = "email_sent";
