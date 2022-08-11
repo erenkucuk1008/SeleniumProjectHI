@@ -1,5 +1,6 @@
 package com.cybertek.tests.day8_testbase_properties_driver;
 
+import com.cybertek.utilities.ConfigurationReader;
 import org.testng.annotations.Test;
 
 import java.io.FileInputStream;
@@ -27,5 +28,9 @@ public class ReadingFromProperties {
         System.out.println("properties.getProperty(\"username\") = " + properties.getProperty("username"));
     }
 
-
+    @Test
+    public void using_properties_util_method(){
+        System.out.println("ConfigurationReader.getProperty(\"browser\") = " + ConfigurationReader.getProperty("browser"));
+        System.out.println("ConfigurationReader.getProperty(\"url\") = " + ConfigurationReader.getProperty("url"));
+    }
 }
