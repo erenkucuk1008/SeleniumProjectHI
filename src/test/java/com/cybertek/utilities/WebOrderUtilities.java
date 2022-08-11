@@ -6,7 +6,6 @@ import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 
 import java.util.List;
-import java.util.concurrent.TimeUnit;
 
 public class WebOrderUtilities {
 
@@ -40,17 +39,6 @@ public class WebOrderUtilities {
 
         //The only condition where the Assert.fail() line below executed is if 'expectedName' is not in the table
         Assert.fail("The expectedName is not in the table.");
-
-    }
-
-    public static void setUp(WebDriver driver, String url){
-
-        driver = WebDriverFactory.getDriver("chrome");
-
-        driver.get(url);
-
-        driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
     }
 
