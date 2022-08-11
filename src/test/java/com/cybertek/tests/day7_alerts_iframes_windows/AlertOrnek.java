@@ -1,9 +1,11 @@
 package com.cybertek.tests.day7_alerts_iframes_windows;
 
 import com.cybertek.utilities.WebDriverFactory;
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -30,7 +32,14 @@ public class AlertOrnek {
         WebElement JS_Alert = driver.findElement(By.xpath("//button[.='Click for JS Alert']"));
         JS_Alert.click();
 
+        Alert alert = driver.switchTo().alert();
+        alert.accept();
 
+        //WebElement successfully_message = driver.findElement(By.xpath("//p[2]"));
+        //WebElement successfully_message = driver.findElement(By.xpath("//p[.='You successfully clicked an alert']"));
+        WebElement successfully_message = driver.findElement(By.id("result"));
+
+        Assert.assertTrue(successfully_message.isDisplayed());
     }
 
     @Test
