@@ -5,12 +5,20 @@ import com.cybertek.utilities.BrowserUtils;
 import com.cybertek.utilities.WebOrderUtilities;
 import org.testng.annotations.Test;
 
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.util.Properties;
+
 public class WebTablePractices extends TestBase {
 
     @Test
-    public void verify_order_test(){
+    public void verify_order_test() throws IOException {
 
-        driver.get("http://secure.smartbearsoftware.com/samples/testcomplete12/WebOrders/login.aspx");
+        Properties properties = new Properties();
+        FileInputStream file = new FileInputStream("configuration.properties");
+        properties.load(file);
+        String URL = properties.getProperty("weborderURL");
+        driver.get(URL);
         WebOrderUtilities.logIntoSmartBear(driver);
         BrowserUtils.sleep(1);
         WebOrderUtilities.verifyOrder(driver, "Mark Smith");
