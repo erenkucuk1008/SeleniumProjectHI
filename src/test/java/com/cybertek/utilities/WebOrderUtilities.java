@@ -20,4 +20,8 @@ public class WebOrderUtilities {
         WebElement logInButton = driver.findElement(By.id("ctl00_MainContent_login_button"));
         logInButton.click();
     }
+
+    public static void verifyOrder(WebDriver driver, String name){
+
+    }
 }
