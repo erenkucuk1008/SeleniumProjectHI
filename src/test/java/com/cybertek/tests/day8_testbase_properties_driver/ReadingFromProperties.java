@@ -26,4 +26,6 @@ public class ReadingFromProperties {
 
         System.out.println("properties.getProperty(\"username\") = " + properties.getProperty("username"));
     }
+
+
 }

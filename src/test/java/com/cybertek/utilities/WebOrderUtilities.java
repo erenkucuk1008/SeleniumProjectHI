@@ -5,27 +5,21 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 
-import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.List;
-import java.util.Properties;
 
 public class WebOrderUtilities {
 
 
     public static void logIntoSmartBear(WebDriver driver) throws IOException {
-        Properties properties = new Properties();
-        FileInputStream file = new FileInputStream("configuration.properties");
-        properties.load(file);
-        String userName = properties.getProperty("username");
+
         //Enter username: "Tester"
         WebElement username = driver.findElement(By.id("ctl00_MainContent_username"));
-        username.sendKeys(userName);
+        username.sendKeys("Tester");
 
         //Enter password: "test"
         WebElement password = driver.findElement(By.id("ctl00_MainContent_password"));
-        String passwordP = properties.getProperty("password");
-        password.sendKeys(passwordP);
+        password.sendKeys("test");
 
         //Click to Login button
         WebElement logInButton = driver.findElement(By.id("ctl00_MainContent_login_button"));
