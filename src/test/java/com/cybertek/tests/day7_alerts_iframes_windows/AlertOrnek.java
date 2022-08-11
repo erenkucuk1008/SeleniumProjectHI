@@ -26,6 +26,7 @@ public class AlertOrnek {
         driver.get("http://practice.cybertekschool.com/javascript_alerts");
     }
 
+    //TC1-Day7
     @Test
     public void JS_Alert(){
 
@@ -42,13 +43,43 @@ public class AlertOrnek {
         Assert.assertTrue(successfully_message.isDisplayed());
     }
 
+    //TC2-Day7
     @Test
     public void JS_Confirm(){
 
+        WebElement JS_Confirm = driver.findElement(By.xpath("//button[.='Click for JS Confirm']"));
+        JS_Confirm.click();
+
+        Alert alert_confirm = driver.switchTo().alert();
+        alert_confirm.accept();
+
+        WebElement result_Confirm = driver.findElement(By.id("result"));
+
+        String actualText = result_Confirm.getText();
+        String expectedText = "You clicked: Ok";
+
+        Assert.assertEquals(actualText, expectedText);
+
     }
 
+    //TC3-Day7
     @Test
     public void JS_Prompt(){
+
+        WebElement JS_Prompt = driver.findElement(By.xpath("//button[.='Click for JS Prompt']"));
+        JS_Prompt.click();
+
+        Alert alert_Prompt = driver.switchTo().alert();
+        alert_Prompt.sendKeys("hello");
+
+        alert_Prompt.accept();
+
+        WebElement result_Prompt = driver.findElement(By.id("result"));
+
+        String actualText = result_Prompt.getText();
+        String expectedText = "You entered: hello";
+
+        Assert.assertEquals(actualText, expectedText);
 
     }
 
