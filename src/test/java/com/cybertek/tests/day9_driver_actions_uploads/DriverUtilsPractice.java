@@ -4,6 +4,7 @@ import com.cybertek.utilities.Driver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class DriverUtilsPractice {
@@ -28,6 +29,12 @@ public class DriverUtilsPractice {
 
         searchBox.sendKeys(searchValue + Keys.ENTER);
 
+        String actualTitle = Driver.getDriver().getTitle();
+        String expectedInTitle = searchValue;
 
+        Assert.assertTrue(actualTitle.contains(expectedInTitle));
+
+        //Calling the custom method we created to close the browser from Driver Utils
+        Driver.closeDriver();
     }
 }
