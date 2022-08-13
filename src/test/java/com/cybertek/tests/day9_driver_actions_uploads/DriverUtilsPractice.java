@@ -23,6 +23,7 @@ public class DriverUtilsPractice {
         // Driver.getDriver() = driver
         Driver.getDriver().get("https://www.google.com");
 
+        //                     Driver.getDriver() = driver demek
         WebElement searchBox = Driver.getDriver().findElement(By.name("q"));
 
         String searchValue = "Galatasaray";
