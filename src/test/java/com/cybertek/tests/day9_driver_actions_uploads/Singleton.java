@@ -13,7 +13,7 @@ public class Singleton {
 
         if (word == null){
             System.out.println("First time call.Word object is Null" +
-                    "Assigning value to it now.");
+                    " Assigning value to it now.");
             word = "something";
         }else {
             System.out.println("word already has a value");
