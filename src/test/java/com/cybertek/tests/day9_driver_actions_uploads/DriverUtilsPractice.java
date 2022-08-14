@@ -4,11 +4,14 @@ import com.cybertek.utilities.ConfigurationReader;
 import com.cybertek.utilities.Driver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class DriverUtilsPractice {
+
+    public WebDriver driver;
 
     @Test
     public void simple_google_search_test(){
@@ -38,6 +41,12 @@ public class DriverUtilsPractice {
         Assert.assertTrue(actualTitle.contains(expectedInTitle));
 
         //Calling the custom method we created to close the browser from Driver Utils
-        Driver.closeDriver();
+        Driver.closeDriver();// method un icinde driver.quit() var, and then we assign driver==null
+        //driver==null dedigimiz icin devam ediyor. Driver class a bakarsak, getDriver() methodu if(driver==null) ile basliyor
+
+        //Driver.getDriver().quit();//direk quit ile bitirsek driver==null olmadigi icin, yeni bir session baslamiyor.
+        //NoSuchSessionException veriyor..
+
+        Driver.getDriver().get("http://www.etsy.com");
     }
 }
