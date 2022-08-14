@@ -23,10 +23,16 @@ public class Driver {
                 case "chrome":
                     WebDriverManager.chromedriver().setup();
                     driver = new ChromeDriver();
+                    driver = new ChromeDriver();
+                    driver.manage().window().maximize();
+                    driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
                     break;
                 case "firefox":
                     WebDriverManager.firefoxdriver().setup();
                     driver = new FirefoxDriver();
+                    driver = new ChromeDriver();
+                    driver.manage().window().maximize();
+                    driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
                     break;
                 default:
                     WebDriverManager.chromedriver().setup();
