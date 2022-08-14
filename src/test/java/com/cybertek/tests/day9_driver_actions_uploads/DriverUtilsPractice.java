@@ -1,5 +1,6 @@
 package com.cybertek.tests.day9_driver_actions_uploads;
 
+import com.cybertek.utilities.ConfigurationReader;
 import com.cybertek.utilities.Driver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
@@ -21,7 +22,8 @@ public class DriverUtilsPractice {
         driver.get("https://www.google.com");
  */
         // Driver.getDriver() = driver
-        Driver.getDriver().get("https://www.google.com");
+        String url = ConfigurationReader.getProperty("googleURL");
+        Driver.getDriver().get(url);
 
         //                     Driver.getDriver() = driver demek
         WebElement searchBox = Driver.getDriver().findElement(By.name("q"));
