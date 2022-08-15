@@ -26,6 +26,7 @@ public class ActionsPractice {
 
         Actions actions = new Actions(Driver.getDriver());
 
+        BrowserUtils.sleep(2);
         actions.doubleClick(textDouble).perform();
 
         String expected = "red";
