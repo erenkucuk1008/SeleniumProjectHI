@@ -2,7 +2,9 @@ package com.cybertek.tests.day10_pom_synchronization_jsExecuter;
 
 import com.cybertek.utilities.BrowserUtils;
 import com.cybertek.utilities.Driver;
+import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebElement;
 import org.testng.annotations.Test;
 
 public class JSExecuterPractices {
@@ -24,6 +26,19 @@ public class JSExecuterPractices {
         }
 
 
+
+    }
+
+    @Test
+    public void scroll_using_jsexecuter_test2(){
+        Driver.getDriver().get("http://practice.cybertekschool.com/large");
+
+        //create object of js executer
+        JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
+
+        WebElement cydeoLink = Driver.getDriver().findElement(By.linkText("CYDEO"));
+        js.executeScript("arguments[0].scrollIntoView(true)",cydeoLink);
+        //     parantez icini google search ettik oyle yazdik ","den sonrasi da nereye kadar asagi inecegimizi belirliyoruz.
 
     }
 }
