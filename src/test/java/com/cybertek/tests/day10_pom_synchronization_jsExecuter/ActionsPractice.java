@@ -12,6 +12,24 @@ import org.testng.annotations.Test;
 public class ActionsPractice {
 
     @Test
+    public void p3_drag_and_drop(){
+        Driver.getDriver().get("https://demos.telerik.com/kendo-ui/dragdrop/index");
+        BrowserUtils.sleep(3);
+
+        WebElement acceptCookies = Driver.getDriver().findElement(By.xpath("//button[.='Accept Cookies']"));
+        acceptCookies.click();//for close HTML pop-up,,,,we accept it
+
+        WebElement smallCircle = Driver.getDriver().findElement(By.id("draggable"));
+        WebElement bigCircle = Driver.getDriver().findElement(By.id("droptarget"));
+
+        Actions actions = new Actions(Driver.getDriver());
+
+        actions.clickAndHold(smallCircle).moveToElement(bigCircle).perform();
+
+        BrowserUtils.sleep(2);
+    }
+
+    @Test
     public void p2_double_click_test(){
         //go to https://www.w3schools.com/tags/tryit.asp?filename=tryhtml5_ev_ondblclick2
         //switch to iframe
