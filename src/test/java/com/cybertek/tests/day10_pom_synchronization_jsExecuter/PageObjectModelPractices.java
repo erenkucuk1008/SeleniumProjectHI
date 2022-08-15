@@ -15,8 +15,13 @@ public class PageObjectModelPractices {
 
         LoginPage loginPage = new LoginPage();
 
-        loginPage.inputUsername.sendKeys("tester");
-        loginPage.inputPassword.sendKeys("test");
+        //loginPage.inputUsername.sendKeys("tester");
+        //we can make this more readable, that's why i use getProperty() method
+
+        String username = ConfigurationReader.getProperty("usernameSmartBear");
+        loginPage.inputUsername.sendKeys(username);
+        String password = ConfigurationReader.getProperty("passwordSmartBear");
+        loginPage.inputPassword.sendKeys(password);
         loginPage.loginButton.click();
     }
 }
