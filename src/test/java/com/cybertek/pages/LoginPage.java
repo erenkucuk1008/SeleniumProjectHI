@@ -18,7 +18,7 @@ public class LoginPage {
     @FindBy(id="ctl00_MainContent_password")
     public WebElement inputPassword;
 
-    @FindBy(id="id=\"ctl00_MainContent_login_button\"")
+    @FindBy(id="ctl00_MainContent_login_button")
     public WebElement loginButton;
 
     @FindBy(id="ctl00_MainContent_status")
