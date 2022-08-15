@@ -24,4 +24,5 @@ public class PageObjectModelPractices {
         loginPage.inputPassword.sendKeys(password);
         loginPage.loginButton.click();
     }
+
 }
