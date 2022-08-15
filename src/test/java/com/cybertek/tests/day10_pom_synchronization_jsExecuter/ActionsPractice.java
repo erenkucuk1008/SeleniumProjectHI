@@ -14,7 +14,6 @@ public class ActionsPractice {
     @Test
     public void p3_drag_and_drop(){
         Driver.getDriver().get("https://demos.telerik.com/kendo-ui/dragdrop/index");
-        BrowserUtils.sleep(3);
 
         WebElement acceptCookies = Driver.getDriver().findElement(By.xpath("//button[.='Accept Cookies']"));
         acceptCookies.click();//for close HTML pop-up,,,,we accept it
@@ -24,9 +23,12 @@ public class ActionsPractice {
 
         Actions actions = new Actions(Driver.getDriver());
 
-        actions.clickAndHold(smallCircle).moveToElement(bigCircle).perform();
+        actions.dragAndDrop(smallCircle,bigCircle).perform();
 
-        BrowserUtils.sleep(2);
+        String expectedText = "You did great!";
+        String actualText = bigCircle.getText();
+
+        Assert.assertEquals(actualText, expectedText);
     }
 
     @Test
