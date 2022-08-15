@@ -15,7 +15,7 @@ public class JSExecuterPractices {
         JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
 
         //Use "js" to reach JavascriptExecuter method
-        js.executeScript("window.scrollBy(0, 750");
+        js.executeScript("window.scrollBy(0, 750)");
 
 
     }
