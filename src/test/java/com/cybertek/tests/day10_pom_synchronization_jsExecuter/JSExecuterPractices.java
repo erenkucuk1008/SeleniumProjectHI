@@ -7,7 +7,7 @@ import org.testng.annotations.Test;
 public class JSExecuterPractices {
 
     @Test
-    public void scroll_using_jsexecuter_test1( {
+    public void scroll_using_jsexecuter_test1() {
 
         Driver.getDriver().get("http://practice.cybertekschool.com/infinite_scroll");
 
