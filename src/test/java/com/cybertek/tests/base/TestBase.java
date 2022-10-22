@@ -5,7 +5,6 @@ import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
-import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
 public abstract class TestBase {
@@ -13,7 +12,7 @@ public abstract class TestBase {
     public WebDriver driver;
 
     @BeforeMethod
-    public void setUpMethod() throws InterruptedException, IOException {
+    public void setUpMethod(){
 
         driver = WebDriverFactory.getDriver("chrome");
         driver.manage().window().maximize();

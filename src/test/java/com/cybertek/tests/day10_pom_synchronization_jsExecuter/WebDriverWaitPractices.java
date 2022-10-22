@@ -1,6 +1,7 @@
 package com.cybertek.tests.day10_pom_synchronization_jsExecuter;
 
 import com.cybertek.pages.DynamicLoad7Page;
+import com.cybertek.utilities.BrowserUtils;
 import com.cybertek.utilities.Driver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -20,7 +21,7 @@ public class WebDriverWaitPractices {
         DynamicLoad7Page dynamicLoad7Page = new DynamicLoad7Page();
 
         Assert.assertTrue(dynamicLoad7Page.infoMessage.isDisplayed());
-        //BrowserUtils.sleep(2);title resimden once geliyor, dolayisyla test fail oluyor. Thread.sleep() koymak gerekiyor bende
+        BrowserUtils.sleep(2);//title resimden once geliyor, dolayisyla test fail oluyor. Thread.sleep() koymak gerekiyor bende
         Assert.assertTrue(dynamicLoad7Page.image.isDisplayed());
     }
 }
